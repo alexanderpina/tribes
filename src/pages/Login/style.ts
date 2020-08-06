@@ -1,9 +1,14 @@
 import styled from 'styled-components';
 
 const Header = styled.header``;
-const FormWrapper = styled.form``;
+const LoginWrapper = styled.div``;
+const Main = styled.main`
+  position: relative;
+  z-index: 2;
+`;
 
 export const Styles = {
-  FormWrapper,
+  LoginWrapper,
   Header,
+  Main
 }

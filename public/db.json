@@ -1,0 +1,38 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Alexander",
+      "lastname": "Costa",
+      "username": "alex",
+      "email": "alexanderpiina@gmail.com",
+      "password": "teste123"
+    }
+  ],
+  "topics": {
+    "categories": [
+      { 
+        "id": 1,
+        "name": "Esportes"
+      },
+      { 
+        "id": 2,
+        "name": "Artes"
+      }
+    ],
+    "articles": [
+      {
+        "id": 1,
+        "category_id": 2,
+        "title": "Teste tópico 1",
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, officiis deserunt incidunt assumenda fuga atque voluptatem unde quae beatae velit a veritatis nam facilis id, iusto ea mollitia? Praesentium, quos."
+      },
+      {
+        "id": 2,
+        "category_id": 1,
+        "title": "Tópico 2",
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, officiis deserunt incidunt assumenda fuga atque voluptatem unde quae beatae velit a veritatis nam facilis id, iusto ea mollitia? Praesentium, quos."
+      }
+    ]
+  }
+}
