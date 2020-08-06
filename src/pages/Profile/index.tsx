@@ -1,27 +1,52 @@
-import React from "react";
+import React, { useEffect } from 'react';
 import { Styles } from './style';
-import GlobalBg from 'components/GlobalBg';
+import { useDispatch } from 'react-redux';
+import Images from 'images';
+import { useWindowInnerSize } from 'hooks/windowHooks';
+import { useSelector } from 'store/selector';
+import { topics } from 'store/topics/topicsAction';
 
-const Profile = () =>
-  <>
-    <Styles.Wrapper>
-      <header>
-        {/* <img src={} alt='' /> */}
-      </header>
+const Profile = () => {
+  const dispatch = useDispatch();
+  const { height } = useWindowInnerSize();
+  const topicsData = useSelector(state => state.topics.data);
 
-      <div>
-        <h2>Prioridade de tópicos</h2>
+  useEffect(() => {
+    if (!topicsData) {
+      dispatch(topics.request());
+    }
+  }, [topicsData, dispatch]);
 
-        <ul>
-          <li>Nome do tópico</li>
-          <li>Nome do tópico 2</li>
-          <li>Nome do tópico 3</li>
-          <li>Nome do tópico 4</li>
-        </ul>
-      </div>
-    </Styles.Wrapper>
+  return (
+    <>
+      <Styles.GlobalHeader>
+        <img src={Images.menu} alt ='' />
+        <h3>Alexander</h3>
+        <img src={Images.edit} alt ='' />
+      </Styles.GlobalHeader>
 
-    <GlobalBg />
-  </>
+      <Styles.Wrapper height={height}>
+        <Styles.Main>
+          <Styles.Header>
+            <img src={Images.profilePhoto} alt='' />
+          </Styles.Header>
+          <Styles.CategoryList>
+            <h3>Prioridade de tópicos</h3>
+            {topicsData?.categories.map(category => {
+              return (
+                <li key={category.id}>
+                  <Styles.RoundedImg>
+                    <img src={Images.twil} alt='' />
+                  </Styles.RoundedImg>
+                  <Styles.Text>{category.name}</Styles.Text>
+                </li>
+              )
+            })}
+          </Styles.CategoryList>
+        </Styles.Main>
+      </Styles.Wrapper>
+    </>
+  )
+}
 
 export default Profile;

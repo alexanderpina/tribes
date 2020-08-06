@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `json-server --watch public/db.json --port 3001`
+
+Runs json-server to use the login and register.
+
 ### `yarn start`
 
 Runs the app in the development mode.<br />

@@ -11,6 +11,8 @@ const Login = lazy(() => import('pages/Login'));
 const Logout = lazy(() => import('pages/Logout'));
 const Register = lazy(() => import('pages/Register'));
 const Profile = lazy(() => import('pages/Profile'));
+const Intro = lazy(() => import('pages/Intro'));
+const Topics = lazy(() => import('pages/Topics'));
 
 const App = () =>
   <StrictMode>
@@ -21,7 +23,18 @@ const App = () =>
           <Route path='/sair' component={Logout} exact={true} />
           <Switch>
             <Route path="/entrar" component={Login} exact />
-            <Route path="/cadastre-se" component={Register} />
+            <Route path="/cadastre-se" component={Register} exact />
+            <Route path="/" component={Register} exact />
+            <PrivateRoute
+              exact={true}
+              path="/intro"
+              component={Intro}
+            />
+            <PrivateRoute
+              exact={true}
+              path="/topicos"
+              component={Topics}
+            />
             <PrivateRoute
               exact={true}
               path="/perfil"

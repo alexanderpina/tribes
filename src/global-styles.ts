@@ -1,42 +1,26 @@
 import { createGlobalStyle } from 'styled-components';
-import Fonts from 'assets/fonts'
 
 const GlobalStyles = createGlobalStyle`
-  @font-face {
-    font-display: swap;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 200;
-    src: local('Montserrat'), url(${Fonts.thin}) format('ttf');
+  body {
+    font: 300 14px/17px 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    
+    * {
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
   }
-  
-  @font-face {
-    font-display: swap;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Montserrat'), url(${Fonts.regular}) format('ttf');
-  }
-  
-  @font-face {
-    font-display: swap;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Montserrat'), url(${Fonts.bold}) format('ttf');
+
+  p {
+    margin-bottom: 15px;
   }
 
   #root {
     display: flex;
+    margin: 0;
+  
   }
-
-  * {
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-    margin: 0 auto 10px;
-  }
-
-
 `;
 
 export default GlobalStyles;

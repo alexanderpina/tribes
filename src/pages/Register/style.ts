@@ -1,9 +1,23 @@
 import styled from 'styled-components';
 
-const RegisterWrapper = styled.section`
+type HeightProps = {
+  height?: number;
+};
+
+const RegisterWrapper = styled.section<HeightProps>`
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: ${({ height }) => !!height ? `${height}px` : 'auto'};
+  margin: 0;
   padding: 21px 31px;
   width: 100%;
-  z-index: 2;
+  z-index: 5;
+
+  a {
+    color: #fff;
+  }
 `;
 
 const RegisterHeader = styled.header`
@@ -16,7 +30,18 @@ const RegisterHeader = styled.header`
   }
 `;
 
+const GroupButtons = styled.div`
+  display: flex;
+  margin: 25px 0;
+  justify-content: space-between;
+
+  button {
+    width: 46%;
+  }
+`;
+
 export const Styles = {
+  GroupButtons,
   RegisterHeader,
   RegisterWrapper
 }

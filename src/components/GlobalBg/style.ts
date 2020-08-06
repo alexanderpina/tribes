@@ -24,6 +24,16 @@ const BG = styled.span`
   }
 `;
 
+const BGShapes = styled(BG)`
+  background: url(${Images.bgShapes}) no-repeat center bottom;
+  z-index: 2;
+
+  &:after {
+    display: none;
+  }
+`;
+
 export const Styles = {
-  BG
+  BG,
+  BGShapes
 }

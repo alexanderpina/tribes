@@ -5,7 +5,7 @@ import CreateSagaMiddleware from 'redux-saga';
 
 export const sagaMiddleware = CreateSagaMiddleware();
 export default (history: History) => [ 
-  ...[process.env.NODE_ENV !== 'production' ? Logger : undefined] as any, 
+  Logger, 
   routerMiddleware(history), 
   sagaMiddleware, 
-].filter(Boolean);
+];
