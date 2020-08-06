@@ -57,7 +57,7 @@ const Login: React.FC<{}> = () => {
             </button>
           </p>
 
-          <p>Ainda não possui uma conta? <Link to='/cadastro'>Cadastre-se</Link></p>
+          <p>Ainda não possui uma conta? <Link to='/cadastre-se'>Cadastre-se</Link></p>
         </FormikForm>
       )}
     </Formik>

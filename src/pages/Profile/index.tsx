@@ -1,6 +1,9 @@
 import React from "react";
 import { Styles } from './style';
 
+import { ApplicationState } from 'store';
+import { connect } from 'react-redux';
+
 const Profile = () =>
   <Styles.Wrapper>
     <header>

@@ -63,7 +63,7 @@ const Register = () => {
                 </button>
               </p>
 
-              <p>Já possui uma conta? <Link to='/'>Faça login</Link></p>
+              <p>Já possui uma conta? <Link to='/entrar'>Faça login</Link></p>
             </FormikForm>
           </Styles.RegisterWrapper>
 
